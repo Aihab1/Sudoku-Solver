@@ -1,5 +1,8 @@
-#----------------------------------------------Algorithm-------------------------------------------
+#----------------------------------------------Algorithm------------------------------------------
+import random
+anyindex = random.randint(0,6)
 board = [
+    [
         [0, 2, 0, 0, 0, 0, 0, 0, 0],
         [0, 0, 0, 6, 0, 0, 0, 0, 3],
         [0, 7, 4, 0, 8, 0, 0, 0, 0],
@@ -9,9 +12,77 @@ board = [
         [0, 0, 0, 0, 1, 0, 7, 8, 0],
         [5, 0, 0, 0, 0, 9, 0, 0, 0],
         [0, 0, 0, 0, 0, 0, 0, 4, 0]
+    ],
+    [
+        [0, 0, 0, 2, 6, 0, 7, 0, 1],
+        [6, 8, 0, 0, 7, 0, 0, 9, 0],
+        [1, 9, 0, 0, 0, 4, 5, 0, 0],
+        [8, 2, 0, 1, 0, 0, 0, 4, 0],
+        [0, 0, 4, 6, 0, 2, 9, 0, 0],
+        [0, 5, 0, 0, 0, 3, 0, 2, 8],
+        [0, 0, 9, 3, 0, 0, 0, 7, 4],
+        [0, 4, 0, 0, 5, 0, 0, 3, 6],
+        [7, 0, 3, 0, 1, 8, 0, 0, 0]
+    ],
+    [
+        [1, 0, 0, 4, 8, 9, 0, 0, 6],
+        [7, 3, 0, 0, 0, 0, 0, 4, 0],
+        [0, 0, 0, 0, 0, 1, 2, 9, 5],
+        [0, 0, 7, 1, 2, 0, 6, 0, 0],
+        [5, 0, 0, 7, 0, 3, 0, 0, 8],
+        [0, 0, 6, 0, 9, 5, 7, 0, 0],
+        [9, 1, 4, 6, 0, 0, 0, 0, 0],
+        [0, 2, 0, 0, 0, 0, 0, 3, 7],
+        [8, 0, 0, 5, 1, 2, 0, 0, 4]
+    ],
+    [
+        [0, 2, 0, 6, 0, 8, 0, 0, 0],
+        [5, 8, 0, 0, 0, 9, 7, 0, 0],
+        [0, 0, 0, 0, 4, 0, 0, 0, 0],
+        [3, 7, 0, 0, 0, 0, 5, 0, 0],
+        [6, 0, 0, 0, 0, 0, 0, 0, 4],
+        [0, 0, 8, 0, 0, 0, 0, 1, 3],
+        [0, 0, 0, 0, 2, 0, 0, 0, 0],
+        [0, 0, 9, 8, 0, 0, 0, 3, 6],
+        [0, 0, 0, 3, 0, 6, 0, 9, 0]
+    ],
+    [
+        [0, 0, 0, 6, 0, 0, 4, 0, 0],
+        [7, 0, 0, 0, 0, 3, 6, 0, 0],
+        [0, 0, 0, 0, 9, 1, 0, 8, 0],
+        [0, 0, 0, 0, 0, 0, 0, 0, 0],
+        [0, 5, 0, 1, 8, 0, 0, 0, 3],
+        [0, 0, 0, 3, 0, 6, 0, 4, 5],
+        [0, 4, 0, 2, 0, 0, 0, 6, 0],
+        [9, 0, 3, 0, 0, 0, 0, 0, 0],
+        [0, 2, 0, 0, 0, 0, 1, 0, 0]
+    ],
+    [
+        [2, 0, 0, 3, 0, 0, 0, 0, 0],
+        [8, 0, 4, 0, 6, 2, 0, 0, 3],
+        [0, 1, 3, 8, 0, 0, 2, 0, 0],
+        [0, 0, 0, 0, 2, 0, 3, 9, 0],
+        [5, 0, 7, 0, 0, 0, 6, 2, 1],
+        [0, 3, 2, 0, 0, 6, 0, 0, 0],
+        [0, 2, 0, 0, 0, 9, 1, 4, 0],
+        [6, 0, 1, 2, 5, 0, 8, 0, 9],
+        [0, 0, 0, 0, 0, 1, 0, 0, 2]
+    ],
+    [
+        [0, 0, 0, 3, 8, 0, 0, 9, 2],
+        [0, 0, 0, 6, 0, 0, 8, 0, 0],
+        [0, 2, 0, 0, 0, 5, 0, 0, 0],
+        [9, 0, 1, 0, 0, 0, 0, 8, 0],
+        [0, 8, 2, 0, 0, 0, 1, 6, 0],
+        [0, 6, 0, 0, 0, 0, 7, 0, 5],
+        [0, 0, 0, 9, 0, 0, 0, 5, 0],
+        [0, 0, 5, 0, 0, 4, 0, 0, 0],
+        [6, 1, 0, 0, 7, 8, 0, 0, 0]
     ]
+]
 #Solvedboard will be changed after algo is run
 Solvedboard = [
+    [
         [0, 2, 0, 0, 0, 0, 0, 0, 0],
         [0, 0, 0, 6, 0, 0, 0, 0, 3],
         [0, 7, 4, 0, 8, 0, 0, 0, 0],
@@ -21,7 +92,74 @@ Solvedboard = [
         [0, 0, 0, 0, 1, 0, 7, 8, 0],
         [5, 0, 0, 0, 0, 9, 0, 0, 0],
         [0, 0, 0, 0, 0, 0, 0, 4, 0]
+    ],
+    [
+        [0, 0, 0, 2, 6, 0, 7, 0, 1],
+        [6, 8, 0, 0, 7, 0, 0, 9, 0],
+        [1, 9, 0, 0, 0, 4, 5, 0, 0],
+        [8, 2, 0, 1, 0, 0, 0, 4, 0],
+        [0, 0, 4, 6, 0, 2, 9, 0, 0],
+        [0, 5, 0, 0, 0, 3, 0, 2, 8],
+        [0, 0, 9, 3, 0, 0, 0, 7, 4],
+        [0, 4, 0, 0, 5, 0, 0, 3, 6],
+        [7, 0, 3, 0, 1, 8, 0, 0, 0]
+    ],
+    [
+        [1, 0, 0, 4, 8, 9, 0, 0, 6],
+        [7, 3, 0, 0, 0, 0, 0, 4, 0],
+        [0, 0, 0, 0, 0, 1, 2, 9, 5],
+        [0, 0, 7, 1, 2, 0, 6, 0, 0],
+        [5, 0, 0, 7, 0, 3, 0, 0, 8],
+        [0, 0, 6, 0, 9, 5, 7, 0, 0],
+        [9, 1, 4, 6, 0, 0, 0, 0, 0],
+        [0, 2, 0, 0, 0, 0, 0, 3, 7],
+        [8, 0, 0, 5, 1, 2, 0, 0, 4]
+    ],
+    [
+        [0, 2, 0, 6, 0, 8, 0, 0, 0],
+        [5, 8, 0, 0, 0, 9, 7, 0, 0],
+        [0, 0, 0, 0, 4, 0, 0, 0, 0],
+        [3, 7, 0, 0, 0, 0, 5, 0, 0],
+        [6, 0, 0, 0, 0, 0, 0, 0, 4],
+        [0, 0, 8, 0, 0, 0, 0, 1, 3],
+        [0, 0, 0, 0, 2, 0, 0, 0, 0],
+        [0, 0, 9, 8, 0, 0, 0, 3, 6],
+        [0, 0, 0, 3, 0, 6, 0, 9, 0]
+    ],
+    [
+        [0, 0, 0, 6, 0, 0, 4, 0, 0],
+        [7, 0, 0, 0, 0, 3, 6, 0, 0],
+        [0, 0, 0, 0, 9, 1, 0, 8, 0],
+        [0, 0, 0, 0, 0, 0, 0, 0, 0],
+        [0, 5, 0, 1, 8, 0, 0, 0, 3],
+        [0, 0, 0, 3, 0, 6, 0, 4, 5],
+        [0, 4, 0, 2, 0, 0, 0, 6, 0],
+        [9, 0, 3, 0, 0, 0, 0, 0, 0],
+        [0, 2, 0, 0, 0, 0, 1, 0, 0]
+    ],
+    [
+        [2, 0, 0, 3, 0, 0, 0, 0, 0],
+        [8, 0, 4, 0, 6, 2, 0, 0, 3],
+        [0, 1, 3, 8, 0, 0, 2, 0, 0],
+        [0, 0, 0, 0, 2, 0, 3, 9, 0],
+        [5, 0, 7, 0, 0, 0, 6, 2, 1],
+        [0, 3, 2, 0, 0, 6, 0, 0, 0],
+        [0, 2, 0, 0, 0, 9, 1, 4, 0],
+        [6, 0, 1, 2, 5, 0, 8, 0, 9],
+        [0, 0, 0, 0, 0, 1, 0, 0, 2]
+    ],
+    [
+        [0, 0, 0, 3, 8, 0, 0, 9, 2],
+        [0, 0, 0, 6, 0, 0, 8, 0, 0],
+        [0, 2, 0, 0, 0, 5, 0, 0, 0],
+        [9, 0, 1, 0, 0, 0, 0, 8, 0],
+        [0, 8, 2, 0, 0, 0, 1, 6, 0],
+        [0, 6, 0, 0, 0, 0, 7, 0, 5],
+        [0, 0, 0, 9, 0, 0, 0, 5, 0],
+        [0, 0, 5, 0, 0, 4, 0, 0, 0],
+        [6, 1, 0, 0, 7, 8, 0, 0, 0]
     ]
+]
 
 def find_empty(board):
     for r in range(9):
@@ -76,7 +214,7 @@ def Solve(board):
             board[row][column] = 0
     return False
 
-Solve(Solvedboard)
+Solve(Solvedboard[anyindex])
 
 #------------------------------------------------------GUI Code---------------------------------------------------
 
@@ -156,56 +294,56 @@ def main():
         if Mouse_state is True:        
             if event.type == pygame.KEYDOWN:
                 if event.key == pygame.K_1:
-                    if Solvedboard[ro][co] == 1:
-                        board[ro][co] = 1
+                    if Solvedboard[anyindex][ro][co] == 1:
+                        board[anyindex][ro][co] = 1
                     else:
                         DISPLAYSURF.blit(font.render(str(1), True, (255, 0, 0)), (co*CELLSIZE+11, ro*CELLSIZE+5))
                                  
                 if event.key == pygame.K_2:
-                    if Solvedboard[ro][co] == 2:
-                        board[ro][co] = 2
+                    if Solvedboard[anyindex][ro][co] == 2:
+                        board[anyindex][ro][co] = 2
                     else:
                         DISPLAYSURF.blit(font.render(str(2), True, (255, 0, 0)), (co*CELLSIZE+11, ro*CELLSIZE+5))
                         
                 if event.key == pygame.K_3:
-                    if Solvedboard[ro][co] == 3:
-                        board[ro][co] = 3
+                    if Solvedboard[anyindex][ro][co] == 3:
+                        board[anyindex][ro][co] = 3
                     else:
                         DISPLAYSURF.blit(font.render(str(3), True, (255, 0, 0)), (co*CELLSIZE+11, ro*CELLSIZE+5))
                         
                 if event.key == pygame.K_4:
-                    if Solvedboard[ro][co] == 4:
-                        board[ro][co] = 4
+                    if Solvedboard[anyindex][ro][co] == 4:
+                        board[anyindex][ro][co] = 4
                     else:
                         DISPLAYSURF.blit(font.render(str(4), True, (255, 0, 0)), (co*CELLSIZE+11, ro*CELLSIZE+5))
                         
                 if event.key == pygame.K_5:
-                    if Solvedboard[ro][co] == 5:
-                        board[ro][co] = 5
+                    if Solvedboard[anyindex][ro][co] == 5:
+                        board[anyindex][ro][co] = 5
                     else:
                         DISPLAYSURF.blit(font.render(str(5), True, (255, 0, 0)), (co*CELLSIZE+11, ro*CELLSIZE+5))
                         
                 if event.key == pygame.K_6:
-                    if Solvedboard[ro][co] == 6:
-                        board[ro][co] = 6
+                    if Solvedboard[anyindex][ro][co] == 6:
+                        board[anyindex][ro][co] = 6
                     else:
                         DISPLAYSURF.blit(font.render(str(6), True, (255, 0, 0)), (co*CELLSIZE+11, ro*CELLSIZE+5))
                         
                 if event.key == pygame.K_7:
-                    if Solvedboard[ro][co] == 7:
-                        board[ro][co] = 7
+                    if Solvedboard[anyindex][ro][co] == 7:
+                        board[anyindex][ro][co] = 7
                     else:
                         DISPLAYSURF.blit(font.render(str(7), True, (255, 0, 0)), (co*CELLSIZE+11, ro*CELLSIZE+5))
                        
                 if event.key == pygame.K_8:
-                    if Solvedboard[ro][co] == 8:
-                        board[ro][co] = 8
+                    if Solvedboard[anyindex][ro][co] == 8:
+                        board[anyindex][ro][co] = 8
                     else:
                         DISPLAYSURF.blit(font.render(str(8), True, (255, 0, 0)), (co*CELLSIZE+11, ro*CELLSIZE+5))
                         
                 if event.key == pygame.K_9:
-                    if Solvedboard[ro][co] == 9:
-                        board[ro][co] = 9
+                    if Solvedboard[anyindex][ro][co] == 9:
+                        board[anyindex][ro][co] = 9
                     else:
                         DISPLAYSURF.blit(font.render(str(9), True, (255, 0, 0)), (co*CELLSIZE+11, ro*CELLSIZE+5))
                         
@@ -216,11 +354,11 @@ def main():
             if event.key == pygame.K_SPACE:
                 for i in range(9):
                     for j in range(9):
-                        board[i][j] = Solvedboard[i][j]
+                        board[anyindex][i][j] = Solvedboard[anyindex][i][j]
             
         for r in range(9):
             for c in range(9):
-                number = board[r][c]
+                number = board[anyindex][r][c]
                 if number != 0:
                     show_number(number, r, c)
 
